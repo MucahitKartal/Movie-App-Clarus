@@ -1,7 +1,17 @@
 import React from "react";
+import { useMovieContext } from "../context/MovieContext";
 
 const Main = () => {
-  return <div>Main</div>;
+  const { movies, loading } = useMovieContext();
+  return (
+    <div>
+      <div>
+        {movies.map((movie) => (
+          <p>{movie.id}</p>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Main;
